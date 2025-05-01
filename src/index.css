@@ -21,3 +21,6 @@ body * {
 		}
 	}
 }
+.h2 {
+	@apply text-2xl mb-15 font-bold text-center;
+}

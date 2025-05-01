@@ -3,13 +3,14 @@ import Advantage from "./components/Advantage";
 import Compare from "./components/Compare";
 import Header from "./components/Header";
 import "./index.css";
+import Grid from "./components/Grid";
 
 function App() {
 	const [darkMode, setDarkMode] = useState(false);
 
 	return (
 		<div
-			className={`flex items-center flex-col bg-linear-to-br/hsl${darkMode ? " from-gray-900  to-gray-950" : " from-blue-200 to-cyan-400"} min-h-screen transition-colors duration-700`}
+			className={`flex items-center flex-col bg-linear-to-br/hsl ${darkMode ? " from-gray-900  to-gray-950" : " from-blue-200 to-cyan-200"} min-h-screen transition-colors duration-700`}
 		>
 			{/* HEADER */}
 			<header
@@ -22,18 +23,15 @@ function App() {
 				className={`max-w-4xl p-px rounded-lg m-5 ${darkMode ? "animate-rotate-border bg-conic/[from_var(--border-angle)] from-gray-700 via-cyan-400 to-gray-700 from-80% via-90% to-100%" : " "} `}
 			>
 				<main
-					className={`max-w-4xl p-3 rounded-lg space-y-20 ${darkMode ? "bg-gray-900  text-white" : " "}`}
+					className={`max-w-4xl p-3 rounded-lg space-y-20 bg-gradient-to-br ${darkMode ? " from-cyan-800 to-gray-950 from-0 to-30% text-white" : " "}`}
 				>
-					<h1
-						className={`text-5xl font-bold mb-2 text-center ${darkMode && "animate-rotate-border text/[from_var(--border-angle)] from-black via-cyan-400 to-black"}`} /* not working on text, need to find something else */
-					>
+					<h1 className="text-5xl font-bold mb-14 text-center ">
+						{/* need to try this : https://www.youtube.com/watch?v=blUpQMJjObE&ab_channel=TomIsLoading */}
 						Tailwind CSS v4
 					</h1>
 					{/* Presentation / intro */}
-					<section id="intro" className="max-w-3xl text-center">
-						<h2 className="text-2xl font-bold mb-4">
-							🔍 Qu'est-ce que Tailwind CSS ?
-						</h2>
+					<section id="intro" className=" text-center">
+						<h2 className="h2">🔍 Qu'est-ce que Tailwind CSS ?</h2>
 						<p>
 							<span className="text-indigo-500 font-semibold">
 								Tailwind CSS
@@ -53,16 +51,15 @@ function App() {
 
 					{/* Avantages Tailwind(V4) */}
 					<section id="avantages">
-						<h2 className="text-2xl text-center font-semibold mb-4">
-							🎉Nouveautés & Avantages.
-						</h2>
+						<h2 className="h2">🎉Nouveautés & Avantages.</h2>
 
 						<div className="space-y-6">
 							<Advantage
 								darkMode={darkMode}
 								title="⚡️ Compilation ultra rapide"
 								description="Tailwind v4 a été entierement réécrit en Rust. Il utilise le moteur Lightning CSS pour une compilation jusqu’à 10x plus rapide."
-								extendedDescription="Tailwind CSS v4 tire parti de la puissance de Rust et du moteur Lightning CSS pour révolutionner les performances de compilation. Grâce à cette refonte, même les projets comportant des milliers de composants et de classes utilitaires peuvent être compilés en quelques secondes. Ce gain de rapidité transforme l'expérience développeur : moins de temps d'attente, plus de productivité, et un cycle itératif de développement beaucoup plus fluide."
+								extendedDescription="Tailwind CSS v4 tire parti de la puissance de Rust et du moteur Lightning CSS pour révolutionner les performances de compilation. 
+								Grâce à cette refonte, même les projets comportant des milliers de composants et de classes utilitaires peuvent être compilés en quelques secondes. Ce gain de rapidité transforme l'expérience développeur : moins de temps d'attente, plus de productivité, et un cycle itératif de développement beaucoup plus fluide."
 							/>
 							<Advantage
 								darkMode={darkMode}
@@ -93,6 +90,36 @@ function App() {
 
 					{/* CSS classique vs Tailwind */}
 					<Compare />
+					<h2 className="h2"> Les grid 🏁</h2>
+
+					<Grid />
+
+					<p>
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat
+						sint repudiandae exercitationem, illo, possimus sed explicabo, nihil
+						totam sapiente nisi ipsa rerum! Nostrum, hic reiciendis quasi quod,
+						accusantium architecto iste voluptate explicabo eum, maiores laborum
+						nihil quaerat iure voluptas minima omnis dolores nesciunt nemo modi
+						autem provident! Recusandae qui quibusdam velit corporis ipsum,
+						mollitia necessitatibus aliquam quidem molestias doloremque neque
+						perspiciatis fuga beatae debitis maiores eos temporibus eius eaque
+						ut harum esse placeat nemo. Repellendus aliquid iure nihil
+						laudantium vitae inventore repellat sapiente, corporis modi omnis
+						illo saepe temporibus deserunt ipsum minus sit tempore perspiciatis
+						provident corrupti consequatur, quidem animi accusamus dignissimos.
+						Eum alias quo nam dolorem aliquid mollitia eligendi nihil, sunt
+						voluptatem nobis dolor praesentium vero odit consequuntur, ad
+						voluptatum necessitatibus quas adipisci repudiandae architecto
+						perspiciatis. Modi itaque, doloremque eum aliquid, ratione sed ut
+						accusamus ducimus corporis aperiam necessitatibus mollitia minus
+						omnis? Ad aut harum facere tempora numquam. Provident ipsa porro
+						quas aliquam, iste ab modi repellendus excepturi a ut quibusdam
+						laborum facilis accusamus nemo ipsam quod maiores mollitia
+						voluptatum, unde atque aspernatur. Aspernatur mollitia a architecto
+						eligendi, perferendis cumque obcaecati ipsam quibusdam aliquam
+						blanditiis expedita adipisci tempora voluptatem provident id ducimus
+						soluta error recusandae labore ullam voluptates voluptatibus.
+					</p>
 
 					<div className="text-center">
 						<button
@@ -100,7 +127,7 @@ function App() {
 							onClick={() => {
 								window.scrollTo({ top: 0, behavior: "smooth" });
 							}}
-							className={`mt-10 px-6 py-3 border-1 border-gray-500 rounded shadow-2xl text-white hover:brightness-115 hover:border-gray-700 active:brightness-135 bg-linear-to-br/hsl${darkMode ? " from-gray-700  to-gray-900" : " from-pink-500 to-violet-500"}`}
+							className={`mt-10 px-6 py-3 border-1 border-gray-500 rounded shadow-2xl text-white hover:brightness-115 hover:border-gray-700 active:brightness-135 bg-linear-to-br/hsl ${darkMode ? " from-gray-700  to-gray-900" : " from-pink-500 to-violet-500"}`}
 						>
 							Retour en haut de page
 						</button>

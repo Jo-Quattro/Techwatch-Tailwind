@@ -30,7 +30,7 @@ function Advantage({
 			<p className="mt-2 text-sm">{description}</p>
 
 			{showMore && (
-				<div className="mt-4 p-4 bg-white/10 border-2 border-green-600 rounded-lg text-sm">
+				<div className="mt-4 p-4 bg-white/10 border-2 border-green-600 rounded-lg space-y-4 text-sm">
 					{extendedDescription}
 				</div>
 			)}

@@ -2,12 +2,10 @@ import "../index.css";
 
 function Compare() {
 	return (
-		<section id="comparaison">
-			<h2 className="text-2xl font-semibold text-center mb-4">
-				🆚 Classic CSS / Inline Tailwind
-			</h2>
+		<section id="comparaison" className="h-100  mb-50">
+			<h2 className="h2">🆚 Classic CSS / Inline Tailwind</h2>
 			<div className="grid md:flex items-center justify-center gap-4 w-full ">
-				<div className="bg-gray-100 dark:bg-gray-800 p-2 rounded-xl w-89 h-55 border-2 border-blue-500">
+				<div className="bg-gray-100 dark:bg-gray-800 p-2 rounded-xl w-89 h-60 border-2 border-blue-500">
 					<h3 className="font-bold mb-2 text-gray-200">🎭 CSS classique</h3>
 
 					<pre className="text-sm text-gray-700 dark:text-gray-300 mt-2">
@@ -45,7 +43,7 @@ function Compare() {
 						</code>
 					</pre>
 				</div>
-				<div className="flex flex-col bg-gray-100 dark:bg-gray-800 p-2 rounded-xl w-89 h-55 border-2 border-cyan-500">
+				<div className="flex flex-col bg-gray-100 dark:bg-gray-800 p-2 rounded-xl w-89 h-60 border-2 border-cyan-500">
 					<h3 className="font-bold mb-2 text-gray-200">🦋 Avec Tailwind</h3>
 					<pre className="text-sm text-gray-700 dark:text-gray-300">
 						{"// Component.tsx"} <br />
