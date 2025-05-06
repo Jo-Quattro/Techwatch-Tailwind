@@ -17,7 +17,7 @@ function Advantage({
 	const [showMore, setShowMore] = useState(false);
 
 	return (
-		<div
+		<section
 			onKeyUp={(e) => {
 				if (e.key === "Enter") setShowMore(!showMore);
 			}}
@@ -34,7 +34,7 @@ function Advantage({
 					{extendedDescription}
 				</div>
 			)}
-		</div>
+		</section>
 	);
 }
 

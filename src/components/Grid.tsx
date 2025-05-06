@@ -1,16 +1,35 @@
+import mer from "../assets/grid-pictures/mer.jpg";
+import merAtheor from "../assets/grid-pictures/merAntheor.jpg";
+import villasAtheor from "../assets/grid-pictures/villasAntheor.jpg";
+import merAtheor3 from "../assets/grid-pictures/merAntheor3.jpg";
+import viaducAtheor from "../assets/grid-pictures/viaducAntheor.jpg";
+import sunSetAntheor from "../assets/grid-pictures/sunSetAntheor.jpg";
+
 function Grid() {
 	return (
-		<div className="grid grid-cols-3 min-w-10/12 h-100 mb-50 gap-4">
-			<div className="bg-blue-500  col-span-3 row-span-2 rounded sm:col-span-2 md:row-span-1 lg:col-span-1">
-				1
+		<div className=" rounded grid grid-cols-3 overflow-hidden p-4 gap-2 ">
+			<div className=" col-span-3 overflow-hidden row-span-2  sm:col-span-2 md:row-span-2 lg:col-span-1 lg:row-span-1 rounded">
+				<img
+					src={merAtheor}
+					alt={merAtheor}
+					className="w-full h-full object-cover"
+				/>
 			</div>
-			<div className="bg-green-500 rounded max-sm:hidden sm:col-span-1">2</div>
-			<div className="bg-purple-500 rounded  max-md:hidden md:col-span-1">
-				3
+			<div className=" rounded overflow-hidden max-sm:hidden md:row-span-1">
+				<img src={mer} alt={mer} className="object-fit" />
 			</div>
-			<div className="bg-yellow-500 rounded max-md:hidden md:row-span-1">4</div>
-			<div className="bg-red-500 rounded max-sm:hidden sm:row-span-1">5</div>
-			<div className="bg-pink-500 rounded max-lg:hidden lg:col-span-1 ">6</div>
+			<div className="  rounded  overflow-hidden max-md:hidden md:row-span-1">
+				<img src={villasAtheor} alt="villas Antheor" />
+			</div>
+			<div className="  rounded overflow-hidden max-md:hidden md:row-span-1">
+				<img src={merAtheor3} alt={merAtheor3} />
+			</div>
+			<div className="  rounded overflow-hidden max-sm:hidden sm:row-span-1">
+				<img src={viaducAtheor} alt="viaducAtheor" />
+			</div>
+			<div className=" rounded overflow-hidden max-md:hidden lg:col-span-1 ">
+				<img src={sunSetAntheor} alt="sunset Antheor" />
+			</div>
 		</div>
 	);
 }

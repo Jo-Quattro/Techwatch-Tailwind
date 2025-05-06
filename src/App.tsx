@@ -4,6 +4,7 @@ import Compare from "./components/Compare";
 import Header from "./components/Header";
 import "./index.css";
 import Grid from "./components/Grid";
+import { motion } from "motion/react";
 
 function App() {
 	const [darkMode, setDarkMode] = useState(false);
@@ -25,10 +26,15 @@ function App() {
 				<main
 					className={`max-w-4xl p-3 rounded-lg space-y-20 bg-gradient-to-br ${darkMode ? " from-cyan-800 to-gray-950 from-0 to-30% text-white" : " "}`}
 				>
-					<h1 className="text-5xl font-bold mb-14 text-center ">
+					<motion.h1
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ duration: 1.5 }}
+						className="text-5xl font-bold mb-14 text-center "
+					>
 						{/* need to try this : https://www.youtube.com/watch?v=blUpQMJjObE&ab_channel=TomIsLoading */}
 						Tailwind CSS v4
-					</h1>
+					</motion.h1>
 					{/* Presentation / intro */}
 					<section id="intro" className=" text-center">
 						<h2 className="h2">🔍 Qu'est-ce que Tailwind CSS ?</h2>
@@ -91,35 +97,21 @@ function App() {
 					{/* CSS classique vs Tailwind */}
 					<Compare />
 					<h2 className="h2"> Les grid 🏁</h2>
-
-					<Grid />
-
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat
-						sint repudiandae exercitationem, illo, possimus sed explicabo, nihil
-						totam sapiente nisi ipsa rerum! Nostrum, hic reiciendis quasi quod,
-						accusantium architecto iste voluptate explicabo eum, maiores laborum
-						nihil quaerat iure voluptas minima omnis dolores nesciunt nemo modi
-						autem provident! Recusandae qui quibusdam velit corporis ipsum,
-						mollitia necessitatibus aliquam quidem molestias doloremque neque
-						perspiciatis fuga beatae debitis maiores eos temporibus eius eaque
-						ut harum esse placeat nemo. Repellendus aliquid iure nihil
-						laudantium vitae inventore repellat sapiente, corporis modi omnis
-						illo saepe temporibus deserunt ipsum minus sit tempore perspiciatis
-						provident corrupti consequatur, quidem animi accusamus dignissimos.
-						Eum alias quo nam dolorem aliquid mollitia eligendi nihil, sunt
-						voluptatem nobis dolor praesentium vero odit consequuntur, ad
-						voluptatum necessitatibus quas adipisci repudiandae architecto
-						perspiciatis. Modi itaque, doloremque eum aliquid, ratione sed ut
-						accusamus ducimus corporis aperiam necessitatibus mollitia minus
-						omnis? Ad aut harum facere tempora numquam. Provident ipsa porro
-						quas aliquam, iste ab modi repellendus excepturi a ut quibusdam
-						laborum facilis accusamus nemo ipsam quod maiores mollitia
-						voluptatum, unde atque aspernatur. Aspernatur mollitia a architecto
-						eligendi, perferendis cumque obcaecati ipsam quibusdam aliquam
-						blanditiis expedita adipisci tempora voluptatem provident id ducimus
-						soluta error recusandae labore ullam voluptates voluptatibus.
-					</p>
+					<div
+						className={` rounded bg-gradient-to-br ${darkMode ? "from-cyan-800 to-gray-900" : "from-pink-300 to-blue-400"}`}
+					>
+						<Grid />
+					</div>
+					<div
+						className={`p-3 rounded bg-gradient-to-br ${darkMode ? "from-cyan-800 to-gray-900" : "from-pink-300 to-blue-400"}`}
+					>
+						<p className="m-2">
+							Voici un petit exemple de l'utilisation des tableaux avec
+							Tailwind, simple à mettre en place, avec l'utilisation de quleques
+							classes, tout en conservant un rendu propre quel que soit le
+							format d’écran,
+						</p>
+					</div>
 
 					<div className="text-center">
 						<button
