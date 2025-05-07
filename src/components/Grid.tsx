@@ -11,18 +11,18 @@ function Grid() {
 			<div className=" col-span-3 overflow-hidden row-span-2  sm:col-span-2 md:row-span-2 lg:col-span-1 lg:row-span-1 rounded">
 				<img
 					src={merAtheor}
-					alt={merAtheor}
+					alt="mer Atheor"
 					className="w-full h-full object-cover"
 				/>
 			</div>
 			<div className=" rounded overflow-hidden max-sm:hidden md:row-span-1">
-				<img src={mer} alt={mer} className="object-fit" />
+				<img src={mer} alt="mer grece" className="object-fit" />
 			</div>
 			<div className="  rounded  overflow-hidden max-md:hidden md:row-span-1">
 				<img src={villasAtheor} alt="villas Antheor" />
 			</div>
 			<div className="  rounded overflow-hidden max-md:hidden md:row-span-1">
-				<img src={merAtheor3} alt={merAtheor3} />
+				<img src={merAtheor3} alt="mer Antheor" />
 			</div>
 			<div className="  rounded overflow-hidden max-sm:hidden sm:row-span-1">
 				<img src={viaducAtheor} alt="viaducAtheor" />

@@ -39,10 +39,7 @@ function App() {
 					<section id="intro" className=" text-center">
 						<h2 className="h2">🔍 Qu'est-ce que Tailwind CSS ?</h2>
 						<p>
-							<span className="text-indigo-500 font-semibold">
-								Tailwind CSS
-							</span>{" "}
-							est un framework
+							Tailwind CSS est un framework
 							<span className=" group text-pink-400 font-semibold mx-1">
 								utility-first
 								<span className="absolute top-[48%] mt-2 w-max min-w-[150px] -translate-x-1/2 rounded-lg bg-gray-800 text-white text-xs px-3 py-2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none ">
@@ -103,13 +100,12 @@ function App() {
 						<Grid />
 					</div>
 					<div
-						className={`p-3 rounded bg-gradient-to-br ${darkMode ? "from-cyan-800 to-gray-900" : "from-pink-300 to-blue-400"}`}
+						className={` p-6 rounded-lg shadow-lg bg-linear-to-br/hsl${darkMode ? " from-green-500 to-green-900" : " from-green-700 to-green-500"}`}
 					>
-						<p className="m-2">
-							Voici un petit exemple de l'utilisation des tableaux avec
-							Tailwind, simple à mettre en place, avec l'utilisation de quleques
-							classes, tout en conservant un rendu propre quel que soit le
-							format d’écran,
+						<p>
+							Voici un petit exemple de tableaux / grid avec Tailwind, simple à
+							mettre en place en utilisant seulement quleques classes, tout en
+							conservant un rendu propre quelque soit le format d’écran,
 						</p>
 					</div>
 
