@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import "./index.css";
 import Grid from "./components/Grid";
 import { motion } from "motion/react";
+import TableData from "./components/TableData";
 
 function App() {
 	const [darkMode, setDarkMode] = useState(false);
@@ -29,7 +30,7 @@ function App() {
 					<motion.h1
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
-						transition={{ duration: 1.5 }}
+						transition={{ duration: 2 }}
 						className="text-5xl font-bold mb-14 text-center "
 					>
 						{/* need to try this : https://www.youtube.com/watch?v=blUpQMJjObE&ab_channel=TomIsLoading */}
@@ -39,16 +40,27 @@ function App() {
 					<section id="intro" className=" text-center">
 						<h2 className="h2">🔍 Qu'est-ce que Tailwind CSS ?</h2>
 						<p>
-							Tailwind CSS est un framework
-							<span className=" group text-pink-400 font-semibold mx-1">
+							Créé par Adam Wathan, Steve Schoger, Jonathan Reinink et David
+							Hemphill, Tailwind CSS est un framework{" "}
+							<a
+								className="font-semibold underline"
+								href="https://github.com/tailwindlabs/tailwindcss"
+								target="blank"
+							>
+								{" "}
+								Open-source
+							</a>{" "}
+							dit
+							<span className=" group text-purple-400 font-semibold mx-1">
 								utility-first
 								<span className="absolute top-[48%] mt-2 w-max min-w-[150px] -translate-x-1/2 rounded-lg bg-gray-800 text-white text-xs px-3 py-2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none ">
-									Chaque classe représente une fonctionnalité unique sans avoir
-									à écrire de CSS personnalisé.
+									Utilisation de classes utilitaires fournies par Tailwind
+									plutôt que de les écrire directement dans un fichier CSS.
 								</span>
 							</span>
 							qui permet de construire rapidement des interfaces modernes,
-							responsives et bien pensées.
+							responsives et bien pensées. Netflix et GitHub ont adopté Tailwind
+							CSS
 						</p>
 					</section>
 
@@ -100,15 +112,18 @@ function App() {
 						<Grid />
 					</div>
 					<div
-						className={` p-6 rounded-lg shadow-lg bg-linear-to-br/hsl${darkMode ? " from-green-500 to-green-900" : " from-green-700 to-green-500"}`}
+						className={` mb-40 p-6 rounded-lg shadow-lg bg-linear-to-br/hsl${darkMode ? " from-green-500 to-green-900" : " from-green-700 to-green-500"}`}
 					>
 						<p>
-							Voici un petit exemple de tableaux / grid avec Tailwind, simple à
-							mettre en place en utilisant seulement quleques classes, tout en
-							conservant un rendu propre quelque soit le format d’écran,
+							Voici un petit exemple de grille avec Tailwind, simple à mettre en
+							place en utilisant seulement quleques classes, tout en conservant
+							un rendu propre quelque soit le format d’écran,
 						</p>
 					</div>
-
+					<div className="mb-40">
+						<h2 className="h2"> Les Tableaux 📊</h2>
+						<TableData darkMode={darkMode} />
+					</div>
 					<div className="text-center">
 						<button
 							type="button"
