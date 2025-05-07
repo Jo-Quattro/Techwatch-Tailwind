@@ -4,6 +4,8 @@ import Compare from "./components/Compare";
 import Header from "./components/Header";
 import "./index.css";
 import Grid from "./components/Grid";
+import { motion } from "motion/react";
+import TableData from "./components/TableData";
 
 function App() {
 	const [darkMode, setDarkMode] = useState(false);
@@ -25,27 +27,40 @@ function App() {
 				<main
 					className={`max-w-4xl p-3 rounded-lg space-y-20 bg-gradient-to-br ${darkMode ? " from-cyan-800 to-gray-950 from-0 to-30% text-white" : " "}`}
 				>
-					<h1 className="text-5xl font-bold mb-14 text-center ">
+					<motion.h1
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ duration: 2 }}
+						className="text-5xl font-bold mb-14 text-center "
+					>
 						{/* need to try this : https://www.youtube.com/watch?v=blUpQMJjObE&ab_channel=TomIsLoading */}
 						Tailwind CSS v4
-					</h1>
+					</motion.h1>
 					{/* Presentation / intro */}
 					<section id="intro" className=" text-center">
 						<h2 className="h2">🔍 Qu'est-ce que Tailwind CSS ?</h2>
 						<p>
-							<span className="text-indigo-500 font-semibold">
-								Tailwind CSS
-							</span>{" "}
-							est un framework
-							<span className=" group text-pink-400 font-semibold mx-1">
+							Créé par Adam Wathan, Steve Schoger, Jonathan Reinink et David
+							Hemphill, Tailwind CSS est un framework{" "}
+							<a
+								className="font-semibold underline"
+								href="https://github.com/tailwindlabs/tailwindcss"
+								target="blank"
+							>
+								{" "}
+								Open-source
+							</a>{" "}
+							dit
+							<span className=" group text-purple-400 font-semibold mx-1">
 								utility-first
 								<span className="absolute top-[48%] mt-2 w-max min-w-[150px] -translate-x-1/2 rounded-lg bg-gray-800 text-white text-xs px-3 py-2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none ">
-									Chaque classe représente une fonctionnalité unique sans avoir
-									à écrire de CSS personnalisé.
+									Utilisation de classes utilitaires fournies par Tailwind
+									plutôt que de les écrire directement dans un fichier CSS.
 								</span>
 							</span>
 							qui permet de construire rapidement des interfaces modernes,
-							responsives et bien pensées.
+							responsives et bien pensées. Netflix et GitHub ont adopté Tailwind
+							CSS
 						</p>
 					</section>
 
@@ -91,36 +106,24 @@ function App() {
 					{/* CSS classique vs Tailwind */}
 					<Compare />
 					<h2 className="h2"> Les grid 🏁</h2>
-
-					<Grid />
-
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat
-						sint repudiandae exercitationem, illo, possimus sed explicabo, nihil
-						totam sapiente nisi ipsa rerum! Nostrum, hic reiciendis quasi quod,
-						accusantium architecto iste voluptate explicabo eum, maiores laborum
-						nihil quaerat iure voluptas minima omnis dolores nesciunt nemo modi
-						autem provident! Recusandae qui quibusdam velit corporis ipsum,
-						mollitia necessitatibus aliquam quidem molestias doloremque neque
-						perspiciatis fuga beatae debitis maiores eos temporibus eius eaque
-						ut harum esse placeat nemo. Repellendus aliquid iure nihil
-						laudantium vitae inventore repellat sapiente, corporis modi omnis
-						illo saepe temporibus deserunt ipsum minus sit tempore perspiciatis
-						provident corrupti consequatur, quidem animi accusamus dignissimos.
-						Eum alias quo nam dolorem aliquid mollitia eligendi nihil, sunt
-						voluptatem nobis dolor praesentium vero odit consequuntur, ad
-						voluptatum necessitatibus quas adipisci repudiandae architecto
-						perspiciatis. Modi itaque, doloremque eum aliquid, ratione sed ut
-						accusamus ducimus corporis aperiam necessitatibus mollitia minus
-						omnis? Ad aut harum facere tempora numquam. Provident ipsa porro
-						quas aliquam, iste ab modi repellendus excepturi a ut quibusdam
-						laborum facilis accusamus nemo ipsam quod maiores mollitia
-						voluptatum, unde atque aspernatur. Aspernatur mollitia a architecto
-						eligendi, perferendis cumque obcaecati ipsam quibusdam aliquam
-						blanditiis expedita adipisci tempora voluptatem provident id ducimus
-						soluta error recusandae labore ullam voluptates voluptatibus.
-					</p>
-
+					<div
+						className={` rounded bg-gradient-to-br ${darkMode ? "from-cyan-800 to-gray-900" : "from-pink-300 to-blue-400"}`}
+					>
+						<Grid />
+					</div>
+					<div
+						className={` mb-40 p-6 rounded-lg shadow-lg bg-linear-to-br/hsl${darkMode ? " from-green-500 to-green-900" : " from-green-700 to-green-500"}`}
+					>
+						<p>
+							Voici un petit exemple de grille avec Tailwind, simple à mettre en
+							place en utilisant seulement quleques classes, tout en conservant
+							un rendu propre quelque soit le format d’écran,
+						</p>
+					</div>
+					<div className="mb-40">
+						<h2 className="h2"> Les Tableaux 📊</h2>
+						<TableData darkMode={darkMode} />
+					</div>
 					<div className="text-center">
 						<button
 							type="button"

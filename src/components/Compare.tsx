@@ -2,8 +2,8 @@ import "../index.css";
 
 function Compare() {
 	return (
-		<section id="comparaison" className="h-100  mb-50">
-			<h2 className="h2">🆚 Classic CSS / Inline Tailwind</h2>
+		<section id="comparaison" className="h-130">
+			<h2 className="h2">🆚 CSS Classique / Tailwind Inline</h2>
 			<div className="grid md:flex items-center justify-center gap-4 w-full ">
 				<div className="bg-gray-100 dark:bg-gray-800 p-2 rounded-xl w-89 h-60 border-2 border-blue-500">
 					<h3 className="font-bold mb-2 text-gray-200">🎭 CSS classique</h3>

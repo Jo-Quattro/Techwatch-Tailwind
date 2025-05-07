@@ -17,12 +17,12 @@ function Advantage({
 	const [showMore, setShowMore] = useState(false);
 
 	return (
-		<div
+		<section
 			onKeyUp={(e) => {
 				if (e.key === "Enter") setShowMore(!showMore);
 			}}
 			onClick={() => setShowMore(!showMore)}
-			className={` p-6 rounded-lg shadow-lg bg-linear-to-br/hsl${darkMode ? " from-green-500 to-green-900" : " from-green-700 to-green-500"}`}
+			className={` p-6 rounded-lg shadow-lg bg-linear-to-br/hsl ${darkMode ? " from-green-500 to-green-900" : " from-green-700 to-green-500"}`}
 		>
 			<h3 className="text-xl font-bold flex items-center justify-between">
 				{title}
@@ -34,7 +34,7 @@ function Advantage({
 					{extendedDescription}
 				</div>
 			)}
-		</div>
+		</section>
 	);
 }
 
