@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { useState } from "react";
 
 interface AdvantageProps {
@@ -8,16 +9,36 @@ interface AdvantageProps {
 interface DarkModeProps {
 	darkMode: boolean;
 }
+interface fadeInProps {
+	fadeIn: {
+		initial: {
+			y: number;
+			opacity: number;
+		};
+		whileInView: {
+			y: number;
+			opacity: number;
+		};
+		transition: {
+			duration: number;
+		};
+		viewport: {
+			margin: string;
+		};
+	};
+}
 function Advantage({
 	title,
 	description,
 	extendedDescription,
 	darkMode,
-}: AdvantageProps & DarkModeProps) {
+	fadeIn,
+}: AdvantageProps & DarkModeProps & fadeInProps) {
 	const [showMore, setShowMore] = useState(false);
 
 	return (
-		<section
+		<motion.section
+			{...fadeIn}
 			onKeyUp={(e) => {
 				if (e.key === "Enter") setShowMore(!showMore);
 			}}
@@ -34,7 +55,7 @@ function Advantage({
 					{extendedDescription}
 				</div>
 			)}
-		</section>
+		</motion.section>
 	);
 }
 

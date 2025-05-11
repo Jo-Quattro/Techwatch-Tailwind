@@ -1,8 +1,28 @@
+import { motion } from "motion/react";
 import "../index.css";
 
-function Compare() {
+interface fadeInProps {
+	fadeIn: {
+		initial: {
+			y: number;
+			opacity: number;
+		};
+		whileInView: {
+			y: number;
+			opacity: number;
+		};
+		transition: {
+			duration: number;
+		};
+		viewport: {
+			margin: string;
+		};
+	};
+}
+
+function Compare({ fadeIn }: fadeInProps) {
 	return (
-		<section id="comparaison" className="h-130">
+		<motion.section {...fadeIn} id="comparaison" className="h-130">
 			<h2 className="h2">🆚 CSS Classique / Tailwind Inline</h2>
 			<div className="grid md:flex items-center justify-center gap-4 w-full ">
 				<div className="bg-gray-100 dark:bg-gray-800 p-2 rounded-xl w-89 h-60 border-2 border-blue-500">
@@ -71,7 +91,7 @@ function Compare() {
 					</p>
 				</div>
 			</div>
-		</section>
+		</motion.section>
 	);
 }
 export default Compare;

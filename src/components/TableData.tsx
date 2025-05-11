@@ -1,10 +1,30 @@
+import { motion } from "motion/react";
+
 interface DarkModeProps {
 	darkMode: boolean;
 }
+interface fadeInProps {
+	fadeIn: {
+		initial: {
+			y: number;
+			opacity: number;
+		};
+		whileInView: {
+			y: number;
+			opacity: number;
+		};
+		transition: {
+			duration: number;
+		};
+		viewport: {
+			margin: string;
+		};
+	};
+}
 
-function TableData({ darkMode }: DarkModeProps) {
+function TableData({ darkMode, fadeIn }: DarkModeProps & fadeInProps) {
 	return (
-		<div className="rounded-t border-2 overflow-hidden">
+		<motion.div {...fadeIn} className="rounded-t border-2 overflow-hidden">
 			<table className="min-w-full text-left shadow-md">
 				<thead
 					className={`${darkMode ? "bg-gradient-to-br from-cyan-800 to-gray-900" : "bg-gradient-to-br from-blue-500 to-purple-500"} border-b`}
@@ -69,7 +89,7 @@ function TableData({ darkMode }: DarkModeProps) {
 					</tr>
 				</tbody>
 			</table>
-		</div>
+		</motion.div>
 	);
 }
 
